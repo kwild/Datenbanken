@@ -16,7 +16,7 @@ public class AngeboteAnzeigen extends JFrame {
 	private JLabel SprachkurseL;
 	private JLabel AnderekurseL;
 	
-    private final String databaseUsername = "DB_Pr2015_02_01";
+    private final String databaseUsername = "DB_PR2015_02_01";
 	private final String databasePassword = "Test123!";
     private JLabel Überschrift1;
     private JLabel Überschrift2;
@@ -26,7 +26,7 @@ public class AngeboteAnzeigen extends JFrame {
     public AngeboteAnzeigen() throws SQLException {
         super("Angebote der Gemeinde");
         //setLocation(500, 500);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
         ResultSet rs = Functions.angeboteSehenSprachkurse(DatabaseConnector.connectToDatabase(databaseUsername, databasePassword), 1); 
 

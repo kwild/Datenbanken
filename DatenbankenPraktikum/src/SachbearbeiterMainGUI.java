@@ -5,6 +5,8 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
  
+import java.sql.SQLException;
+
 import javax.swing.*;
  
  
@@ -90,7 +92,12 @@ public class SachbearbeiterMainGUI extends JFrame{
         	@Override
             public void actionPerformed(ActionEvent e) {
                 
-                new AngeboteAnzeigen();
+                try {
+					new AngeboteAnzeigen();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
                  
             }
         });

@@ -126,11 +126,21 @@ public class MainWindow extends JFrame {
 	}
 	public void login(){
 		Loginanwendung login = new Loginanwendung();
+		String rolle = (String)combobox_rolle.getSelectedItem();
 		String[] loginData = login.login(this.textfield_username.getText(), textfield_password.getText(), (String) combobox_rolle.getSelectedItem());
 		if(loginData[0] == null){
 			loginFailed.setVisible(true);
 		}else{
-			new MainGui("Sacharbeiter",loginData[0],loginData[1],loginData[2]);
+			switch(rolle){
+			case "Sachbearbeiter":
+				System.out.println("TEST");
+				new SachbearbeiterMainGUI().main(null);;
+				break;
+			case "Helfer":
+				break;
+			case "Flüchtling":
+				break;
+			}
 			this.dispose();
 		}
 		

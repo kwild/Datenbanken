@@ -1,8 +1,9 @@
-package GUI;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -10,41 +11,69 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 public class MeineFlüchtlingeSehen_ScrollableJTable extends javax.swing.JFrame{
-	public MeineFlüchtlingeSehen_ScrollableJTable(){
-		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setDefaultCloseOperation(HIDE_ON_CLOSE);
-        this.setTitle("Flüchtlinge anzeigen");
-        
-        JPanel mainPanel = new JPanel();
-        mainPanel.setLayout(new BorderLayout());
-        mainPanel.setPreferredSize(new Dimension(1750, 400));
-        
-        String[] spaltenbeschriftung = {"PersonId", "Vorname", "Nachname", "Original Vorname", "Original Nachname", "Geschlecht", "Geburtsdatum", "Telefonnummer", "Handynummer", "E-Mail", "Antragsstatus", "Aufenthaltsland", "Wunschland"};
-        
-        String[][] FDaten = new String[20][13];
-		for(int i = 0; i < FDaten.length; i++){
-			for(int j = 0; j < FDaten[i].length; j++){
-				FDaten[i][j] = "Hallo";
+	    public MeineFlüchtlingeSehen_ScrollableJTable(){
+	        //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	        this.setDefaultCloseOperation(HIDE_ON_CLOSE);
+	        this.setTitle("Flüchtlinge anzeigen");
+	         
+	        JPanel mainPanel = new JPanel();
+	        mainPanel.setLayout(new BorderLayout());
+	        mainPanel.setPreferredSize(new Dimension(1750, 400));
+	         
+	        /*1	[dbo].[Person].[PId], 
+	         *2 [dbo].[Person].[Vorname], 
+	         *3	[dbo].[Person].[Nachname],
+	          4	[dbo].[Flüchtling].[Original Vorname], 
+	          5 [dbo].[Flüchtling].[Original Nachname],
+	          6 [dbo].[Flüchtling].[Geschlecht], 
+	          7 [dbo].[Flüchtling].[Geburtsdatum],
+	        8	[dbo].[Person].[Tel], 
+	        9	[dbo].[Person].[Handy], 
+	        10	[dbo].[Person].[eMail],
+	        11   [dbo].[Flüchtling].[Antragsstatus], 
+	        12   [dbo].[hatEinen].[Thema]*/
+	      
+	        Object[] spaltenbeschriftung = {"PersonId", "Vorname", "Nachname", "Original Vorname", "Original Nachname", "Geschelcht", "Geburtsdatum", "Telefonnummer", "Handynummer", "E-Mail", "Antragsstatus", "Thema"};
+	      
+	        ResultSet rs = Functions.sachbearbeiterSuchtSeineFlüchtlinge(DatabaseConnector.connectToDatabase("DB_PR2015_02_01", "Test123!"), 3); 
+	        String[][] FDaten = new String[20][12];
+	        int i =0;
+	        try {
+				while(rs.next()){
+					
+					FDaten[i][0] = rs.getString(1);
+					FDaten[i][1] = rs.getString(2);
+					FDaten[i][2] = rs.getString(3);
+					FDaten[i][3] = rs.getString(4);
+					FDaten[i][4] = rs.getString(5);
+					FDaten[i][5] = rs.getString(6);
+					FDaten[i][6] = rs.getString(7);
+					FDaten[i][7] = rs.getString(8);
+					FDaten[i][8] = rs.getString(9);
+					FDaten[i][9] = rs.getString(10);
+					FDaten[i][10] = rs.getString(11);
+					FDaten[i][10] = rs.getString(12);
+					i++;
+					
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
-		}
-        JTable table = new JTable(FDaten, spaltenbeschriftung);
-        table.setRowHeight(25);
-        table.getTableHeader().setFont(new Font("Serif", Font.BOLD, 15));
-        
-        JScrollPane pane = new JScrollPane(table);
-        mainPanel.add(pane, BorderLayout.CENTER);
-        
-        
-        JPanel panel = new ScrollableJTable();
-        panel.setOpaque(true);
-        
-        
-        
-        this.setContentPane(panel);
-        this.pack();
-        this.setLocationRelativeTo(null);
-        this.setVisible(true);
-	}
+	         
+	        JTable table = new JTable(FDaten, spaltenbeschriftung);
+	        table.setRowHeight(25);
+	        table.getTableHeader().setFont(new Font("Serif", Font.BOLD, 15));
+	         
+	        JScrollPane pane = new JScrollPane(table);
+	        mainPanel.add(pane, BorderLayout.CENTER);
+	         
+	         
+	        this.setContentPane(mainPanel);
+	        this.pack();
+	        this.setLocationRelativeTo(null);
+	        this.setVisible(true);
+	    }
 	
 	public static void main(String[] args) {
 		MeineFlüchtlingeSehen_ScrollableJTable test = new MeineFlüchtlingeSehen_ScrollableJTable();

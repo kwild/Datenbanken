@@ -1,15 +1,15 @@
-package GUI;
+
 
 import java.awt.GridLayout;
 
 import javax.swing.*;
 
-public class FlüchtlingeSehen extends JFrame{
+public class FlÃ¼chtlingeSehen extends JFrame{
 	
 	String[][] FDaten;
 	
-	public FlüchtlingeSehen(){
-		super("Flüchtlinge anzeigen");
+	public FlÃ¼chtlingeSehen(){
+		super("Flï¿½chtlinge anzeigen");
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 		FDaten = new String[4][13];
@@ -73,7 +73,7 @@ public class FlüchtlingeSehen extends JFrame{
 	}
 	
 	public static void main(String[] args) {
-		FlüchtlingeSehen bl = new FlüchtlingeSehen();
+		FlÃ¼chtlingeSehen bl = new FlÃ¼chtlingeSehen();
 		bl.setVisible(true);
 	}
 

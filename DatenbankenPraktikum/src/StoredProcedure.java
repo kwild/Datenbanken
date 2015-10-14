@@ -2,58 +2,56 @@ import java.sql.Connection;
 
 public class StoredProcedure {
 	/*
-	 * Methode zum anlgen von Flüchtlingen. Parameter gebDatum, einzugsdatum und
-	 * date müssen in der Form YYYY-DD-MM sein.
+	 * Methode zum anlgen von Flï¿½chtlingen. Parameter gebDatum, einzugsdatum und
+	 * date mï¿½ssen in der Form YYYY-DD-MM sein.
 	 */
-	public static void anlegenFlüchtling(Connection conn, int pid,
+	public static void anlegenFlÃ¼chtling(Connection conn,
 			String email, String vorname, String nachname, String tel,
 			String handy, String geschlecht, String passExistiert,
-			String gebDatum, int registriert, int unterkunft,
+			String gebDatum, String registriert, String unterkunft,
 			String einzugsdatum, String wunschland, String orginalNachname,
 			String orginalVorname, String aufenthalt, String gebdatValidiert,
-			String antragstatus, int kommtAus, int sid, String thema,
+			String antragstatus, String kommtAus, int sid, String thema,
 			String date, String sprache, String sprachniveau,
-			String schreibniveau, String lesenivau, int qid,
+			String schreibniveau, String lesenivau,
 			String bezeichnung, String art) {
 
-		String[] input = new String[29];
-		input[0] = "" + pid;
-		input[1] = "'" + email + "'";
-		input[2] = "'" + vorname + "'";
-		input[3] = "'" + nachname + "'";
-		input[4] = "'" + tel + "'";
-		input[5] = "'" + handy + "'";
-		input[6] = "'" + geschlecht + "'";
-		input[7] = "'" + passExistiert + "'";
-		input[8] = "'" + gebDatum + "'";
-		input[9] = "" + registriert;
-		input[10] = "" + unterkunft;
-		input[11] = "'" + einzugsdatum + "'";
-		input[12] = "'" + wunschland + "'";
-		input[13] = "'" + orginalNachname + "'";
-		input[14] = "'" + orginalVorname + "'";
-		input[15] = "'" + aufenthalt + "'";
-		input[16] = "'" + gebdatValidiert + "'";
-		input[17] = "'" + antragstatus + "'";
-		input[18] = "" + kommtAus;
-		input[19] = sid + "";
-		input[20] = "'" + thema + "'";
-		input[21] = "'" + date + "'";
-		input[22] = "'" + sprache + "'";
-		input[23] = "'" + sprachniveau + "'";
-		input[24] = "'" + schreibniveau + "'";
-		input[25] = "'" + lesenivau + "'";
-		input[26] = "" + qid;
-		input[27] = "'" + bezeichnung + "'";
-		input[28] = "'" + art + "'";
+		String[] input = new String[27];
+		input[0] = "'" + email + "'";
+		input[1] = "'" + vorname + "'";
+		input[2] = "'" + nachname + "'";
+		input[3] = "'" + tel + "'";
+		input[4] = "'" + handy + "'";
+		input[5] = "'" + geschlecht + "'";
+		input[6] = "'" + passExistiert + "'";
+		input[7] = "'" + gebDatum + "'";
+		input[8] = "" + registriert;
+		input[9] = "" + unterkunft;
+		input[10] = "'" + einzugsdatum + "'";
+		input[11] = "'" + wunschland + "'";
+		input[12] = "'" + orginalNachname + "'";
+		input[13] = "'" + orginalVorname + "'";
+		input[14] = "'" + aufenthalt + "'";
+		input[15] = "'" + gebdatValidiert + "'";
+		input[16] = "'" + antragstatus + "'";
+		input[17] = "" + kommtAus;
+		input[18] = sid + "";
+		input[19] = "'" + thema + "'";
+		input[20] = "'" + date + "'";
+		input[21] = "'" + sprache + "'";
+		input[22] = "'" + sprachniveau + "'";
+		input[23] = "'" + schreibniveau + "'";
+		input[24] = "'" + lesenivau + "'";
+		input[25] = "'" + bezeichnung + "'";
+		input[26] = "'" + art + "'";
 
-		ExecutionHelper.executeStoredProcedure(conn, "GesFlüchtlingAnlegen",
+		ExecutionHelper.executeStoredProcedure(conn, "GesFlÃ¼chtlingAnlegen",
 				input);
 
 	}
 
 	/*
-	 * Methode zum einfügen von... Parameter aZeit muss in der Form HH:MM:SS.X
+	 * Methode zum einfï¿½gen von... Parameter aZeit muss in der Form HH:MM:SS.X
 	 * sein.
 	 */
 	public static void anlegenAndere(Connection conn, int aid, String aTel,
@@ -79,7 +77,7 @@ public class StoredProcedure {
 	 */
 	public static void anlegenHelfer(Connection conn, int pid, String email,
 			String vorname, String nachname, String tel, String handy,
-			int gemeinde, int adresse, String straße, int plz,
+			int gemeinde, int adresse, String straÃŸe, int plz,
 			String hausnummer, int aid, String stadt) {
 
 		String[] input = new String[13];
@@ -91,7 +89,7 @@ public class StoredProcedure {
 		input[5] = "'" + handy + "'";
 		input[6] = "" + gemeinde;
 		input[7] = "" + adresse;
-		input[8] = "'" + straße + "'";
+		input[8] = "'" + straÃŸe + "'";
 		input[9] = "" + plz;
 		input[10] = "'" + hausnummer + "'";
 		input[7] = "'" + stadt + "'";
@@ -124,7 +122,7 @@ public class StoredProcedure {
 
 	}
 	/*
-	 * Methode zum einfügen von Sprachkursen Parameter aZeit muss in der Form HH:MM:SS.X
+	 * Methode zum einfï¿½gen von Sprachkursen Parameter aZeit muss in der Form HH:MM:SS.X
 	 * sein.
 	 */
 	public static void anlegenSprachkurs(Connection conn, int aid, String aTel,

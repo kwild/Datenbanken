@@ -18,8 +18,8 @@ public class AngeboteAnzeigen extends JFrame {
 	
     private final String databaseUsername = "DB_PR2015_02_01";
 	private final String databasePassword = "Test123!";
-    private JLabel Überschrift1;
-    private JLabel Überschrift2;
+    private JLabel Ã¼berschrift1;
+    private JLabel Ã¼berschrift2;
      
 
  
@@ -63,9 +63,9 @@ public class AngeboteAnzeigen extends JFrame {
         }
         
         
-        	Überschrift1 = new JLabel("Sprachkursangebote");
-        	Überschrift2 = new JLabel("Andere Kursangebote");
-            Object sprachColumns[] = {"Angebotsnummer","Name","Wochentag","Zeit","Ort","max. Belegung","Kontaktnummer","für Sprachniveau","für Leseniveau","für Schreibniveau","Beschreibung"};
+        	Ã¼berschrift1 = new JLabel("Sprachkursangebote");
+        	Ã¼berschrift2 = new JLabel("Andere Kursangebote");
+            Object sprachColumns[] = {"Angebotsnummer","Name","Wochentag","Zeit","Ort","max. Belegung","Kontaktnummer","fï¿½r Sprachniveau","fï¿½r Leseniveau","fï¿½r Schreibniveau","Beschreibung"};
             Object andereColumns[] = {"Angebotsnummer","Name","Wochentag","Zeit","Ort","max. Belegung","Kontaktnummer","Beschreibung"};
             		
             JTable sprach = new JTable(ADatenS,sprachColumns);
@@ -76,11 +76,11 @@ public class AngeboteAnzeigen extends JFrame {
             
             JPanel sprachkurseP = new JPanel();
             sprachkurseP.setLayout(new BorderLayout());
-            sprachkurseP.add(Überschrift1, BorderLayout.NORTH);
+            sprachkurseP.add(Ã¼berschrift1, BorderLayout.NORTH);
             sprachkurseP.add(sprachScroll, BorderLayout.SOUTH);
             JPanel anderekurseP = new JPanel();
             anderekurseP.setLayout(new BorderLayout());
-            anderekurseP.add(Überschrift2, BorderLayout.NORTH);
+            anderekurseP.add(Ã¼berschrift2, BorderLayout.NORTH);
             anderekurseP.add(andereScroll, BorderLayout.SOUTH);
             
             JPanel pan = new JPanel();

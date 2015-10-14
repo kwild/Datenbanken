@@ -1,10 +1,17 @@
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
 
 public class FlüchtlingAnlegen extends JFrame {
-	JLabel FId = new JLabel();
+	
+	JLabel eMail = new JLabel();
+	JLabel vorname = new JLabel();
+	JLabel nachname = new JLabel();
+	JLabel tel = new JLabel();
+	JLabel handy = new JLabel();
 	JLabel Geschlecht = new JLabel();
 	JLabel Pass = new JLabel();
 	JLabel Geburtsdatum = new JLabel();
@@ -22,12 +29,18 @@ public class FlüchtlingAnlegen extends JFrame {
 	JLabel Date = new JLabel();
 	JLabel Sprache = new JLabel();
 	JLabel Sprachniveau = new JLabel();
-	JLabel Qid = new JLabel();
+	JLabel Schreibniveau = new JLabel();
+	JLabel Leseniveau = new JLabel();
+	
 	JLabel Bezeichnung = new JLabel();
 	JLabel Art = new JLabel();
 	
 	
-	JTextField FId1 = new JTextField();
+	JTextField eMail1 = new JTextField();
+	JTextField vorname1 = new JTextField();
+	JTextField nachname1 = new JTextField();
+	JTextField tel1 = new JTextField();
+	JTextField handy1 = new JTextField();
 	JTextField Geschlecht1 = new JTextField();
 	JTextField Pass1 = new JTextField();
 	JTextField Geburtsdatum1 = new JTextField();
@@ -45,17 +58,27 @@ public class FlüchtlingAnlegen extends JFrame {
 	JTextField Date1 = new JTextField();
 	JTextField Sprache1 = new JTextField();
 	JTextField Sprachniveau1 = new JTextField();
-	JTextField Qid1 = new JTextField();
+	JTextField Schreibniveau1 = new JTextField();
+	JTextField Leseniveau1 = new JTextField();
 	JTextField Bezeichnung1 = new JTextField();
 	JTextField Art1 = new JTextField();
+	
+	JButton save;
 
    public FlüchtlingAnlegen(){
 	   super("Flüchtling Anlegen");
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setLayout(new GridLayout(23,2));
-		this.setSize(800, 800);
+		this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+		this.setLayout(new GridLayout(27,5));
+		this.setLocation(600,300);
+		this.setSize(2000, 2000);
+		
 	   
-	  FId.setText("FId");
+	  eMail.setText("E-Mail");
+	  vorname.setText("Vorname");
+	  nachname.setText("Nachname");
+	  tel.setText("Telefon");
+	  handy.setText("Handy");
+
 	  Geschlecht.setText("Geschlecht");
 	  Pass.setText("Pass");
 	  Geburtsdatum.setText("Geburtsdatum");
@@ -73,14 +96,21 @@ public class FlüchtlingAnlegen extends JFrame {
 	  Date.setText("Date");
 	  Sprache.setText("Sprache");
 	  Sprachniveau.setText("Sprachniveau");
-	  Qid.setText("Qid");
+	  Schreibniveau.setText("Schreibniveau");
+	  Leseniveau.setText("Leseniveau");
 	  Bezeichnung.setText("Bezeichnung");
 	  Art.setText("Art");
 	  
-	  this.getContentPane().add ( FId ) ;
-	  this.getContentPane().add ( FId1 ) ;
-	  this.getContentPane().add ( Geschlecht ) ;
-	  this.getContentPane().add ( Geschlecht1 ) ;
+	  this.getContentPane().add ( eMail ) ;
+	  this.getContentPane().add ( eMail1 ) ;
+	  this.getContentPane().add ( vorname ) ;
+	  this.getContentPane().add ( vorname1 ) ;
+	  this.getContentPane().add ( nachname) ;
+	  this.getContentPane().add ( nachname1 ) ;
+	  this.getContentPane().add ( tel ) ;
+	  this.getContentPane().add ( tel1 ) ;
+	  this.getContentPane().add ( handy ) ;
+	  this.getContentPane().add ( handy1 ) ;
 	  this.getContentPane().add ( Pass ) ;
 	  this.getContentPane().add ( Pass1 ) ;
 	  this.getContentPane().add ( Geburtsdatum ) ;
@@ -113,16 +143,56 @@ public class FlüchtlingAnlegen extends JFrame {
 	  this.getContentPane().add ( Sprache1 ) ;
 	  this.getContentPane().add ( Sprachniveau ) ;
 	  this.getContentPane().add ( Sprachniveau1 ) ;
-	  this.getContentPane().add ( Qid ) ;
-	  this.getContentPane().add ( Qid1 ) ;
+	  this.getContentPane().add ( Schreibniveau ) ;
+	  this.getContentPane().add ( Schreibniveau1 ) ;
+	  this.getContentPane().add ( Leseniveau ) ;
+	  this.getContentPane().add ( Leseniveau1 ) ;
+
 	  this.getContentPane().add ( Bezeichnung) ;
 	  this.getContentPane().add ( Bezeichnung1) ;
 	  this.getContentPane().add ( Art) ;
 	  this.getContentPane().add (Art1) ;
 	  
 	  
-	 
-	 
+	  save = new JButton("Fl�chtling speichern");
+	 save.addActionListener(new ActionListener(){
+         @Override
+         public void actionPerformed(ActionEvent arg0) {
+             // TODO Auto-generated method stub
+              String email = eMail1.getText();
+              String vorname2 =vorname1.getText();
+              String nachname2 =nachname1.getText();
+              String tel2 = tel1.getText();
+              String handy2 =handy1.getText();
+              String geschlecht2 =Geschlecht1.getText();
+              String passExistiert2 =Pass1.getText();
+              String gebDatum2 =Geburtsdatum1.getText();
+              String registriert2 =registriert1.getText();
+              String unterkunft2 =Unterkunft1.getText();
+              String einzugsdatum2 =Einzugsdatum1.getText();
+              String wunschland2 =Wunschland1.getText();
+              String orginalNachname2 =OriginalNachname1.getText();
+              String orginalVorname2 =OriginalVorname1.getText();
+              String aufenthalt2 =Aufenhaltsland1.getText();
+              String gebdatValidiert2 =OriginalVorname1.getText();
+              String antragstatus2 =OriginalVorname1.getText();
+              String originalvorname2 =OriginalVorname1.getText();
+              int sid2=3;
+              String thema2 =Thema1.getText();
+              String date2 =Date1.getText();
+              String sprache2 =Sprache1.getText();
+              String sprachniveau2 =Sprachniveau1.getText();
+              String schreibniveau2 =Schreibniveau1.getText();
+              String  lesenivau2 =Leseniveau1.getText();
+             
+              String bezeichnung2 =Bezeichnung1.getText();
+              String art2 =Art1.getText();
+              String KommtAus2 =kommtAus1.getText();
+        
+              StoredProcedure.anlegenFlüchtling(DatabaseConnector.connectToDatabase("DB_PR2015_02_01", "Test123!"), email, vorname2, nachname2, tel2, handy2, geschlecht2, passExistiert2, gebDatum2, registriert2, unterkunft2, einzugsdatum2, wunschland2, orginalNachname2, orginalVorname2, aufenthalt2, gebdatValidiert2, antragstatus2, KommtAus2, sid2, thema2, date2, sprache2, sprachniveau2, schreibniveau2, lesenivau2, bezeichnung2, art2);
+         }   
+     });
+	 this.getContentPane().add(save);
 	  pack();
    }
    
@@ -133,28 +203,3 @@ public class FlüchtlingAnlegen extends JFrame {
 }
 
 
-
-/*   @FId int,
-@Geschlecht nvarchar(1),
-@Pass nvarchar(4),
-@Geburtsdatum date,
-@registriert int,
-@Unterkunft int,
-@Einzugsdatum date,
-@Wunschland nvarchar(30),
-@OriginalNachname nvarchar(50),
-@OriginalVorname nvarchar(50),
-@Aufenthaltsland nvarchar(50),
-@GeburtsdatumV nvarchar(1),
-@Antragsstatus nvarchar(30),
-@kommtAus int
- @sid int,
-	   @thema nvarchar(50),
-	   @date date,
-	   @sprache nvarchar(50),
-	   @sprachniveau nvarchar(11),
-	   @schreibniveau nvarchar(11),
-	   @leseniveau nvarchar(11),
-	   @qid int,
-	   @bezeichnung nvarchar(50),
-	   @art nvarchar(50)*/

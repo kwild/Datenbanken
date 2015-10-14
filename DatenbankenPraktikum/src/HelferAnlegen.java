@@ -100,7 +100,7 @@ public class HelferAnlegen extends JFrame {       /*   @pid int,
 	  this.getContentPane().add ( PLZ1 ) ;
 	   
 	  
-	  save = new JButton("Fluechtling speichern");
+	  save = new JButton("Helfer speichern");
 	  save.addActionListener(new ActionListener(){
 	         @Override
 	         public void actionPerformed(ActionEvent arg0) {

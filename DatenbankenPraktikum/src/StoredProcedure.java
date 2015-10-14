@@ -5,7 +5,7 @@ public class StoredProcedure {
 	 * Methode zum anlgen von Fl�chtlingen. Parameter gebDatum, einzugsdatum und
 	 * date m�ssen in der Form YYYY-DD-MM sein.
 	 */
-	public static void anlegenFlüchtling(Connection conn,
+	public static void anlegenFluechtling(Connection conn,
 			String email, String vorname, String nachname, String tel,
 			String handy, String geschlecht, String passExistiert,
 			String gebDatum, String registriert, String unterkunft,
@@ -45,13 +45,13 @@ public class StoredProcedure {
 		input[25] = "'" + bezeichnung + "'";
 		input[26] = "'" + art + "'";
 
-		ExecutionHelper.executeStoredProcedure(conn, "GesFlüchtlingAnlegen",
+		ExecutionHelper.executeStoredProcedure(conn, "GesFluechtlingAnlegen",
 				input);
 
 	}
 
 	/*
-	 * Methode zum einf�gen von... Parameter aZeit muss in der Form HH:MM:SS.X
+	 * Methode zum einfuegen von... Parameter aZeit muss in der Form HH:MM:SS.X
 	 * sein.
 	 */
 	public static void anlegenAndere(Connection conn, int aid, String aTel,

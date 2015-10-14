@@ -14,7 +14,7 @@ public class MeineFluechtlingeSehen_ScrollableJTable extends javax.swing.JFrame{
 	    public MeineFluechtlingeSehen_ScrollableJTable(){
 	        //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	        this.setDefaultCloseOperation(HIDE_ON_CLOSE);
-	        this.setTitle("Fl�chtlinge anzeigen");
+	        this.setTitle("Fluechtlinge anzeigen");
 	         
 	        JPanel mainPanel = new JPanel();
 	        mainPanel.setLayout(new BorderLayout());

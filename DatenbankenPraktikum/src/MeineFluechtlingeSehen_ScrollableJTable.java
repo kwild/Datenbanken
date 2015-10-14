@@ -35,7 +35,7 @@ public class MeineFluechtlingeSehen_ScrollableJTable extends javax.swing.JFrame{
 	      
 	        Object[] spaltenbeschriftung = {"PersonId", "Vorname", "Nachname", "Original Vorname", "Original Nachname", "Geschelcht", "Geburtsdatum", "Telefonnummer", "Handynummer", "E-Mail", "Antragsstatus", "Thema"};
 	      
-	        ResultSet rs = Functions.sachbearbeiterSuchtSeineFlüchtlinge(DatabaseConnector.connectToDatabase("DB_PR2015_02_01", "Test123!"), 3); 
+	        ResultSet rs = Functions.sachbearbeiterSuchtSeineFluechtlinge(DatabaseConnector.connectToDatabase("DB_PR2015_02_01", "Test123!"), 3); 
 	        String[][] FDaten = new String[20][12];
 	        int i =0;
 	        try {

@@ -11,39 +11,39 @@ import javax.swing.*;
  
  
 public class SachbearbeiterMainGUI extends JFrame{
-    private JButton FlüchtlingAnlegen;
+    private JButton FluechtlingAnlegen;
     private JButton HelferAnlegen;
     private JButton SachbearbeiterAnlegen;
     private JButton UnterkunftAnlegen;
-    private JButton MeineFlüchtlingeSehen;
+    private JButton MeineFluechtlingeSehen;
     private JButton AngeboteAnzeigen;
  
-    private JLabel überschrift;
+    private JLabel Ueberschrift;
      
     private JPanel buttonGroup;
  
     public SachbearbeiterMainGUI() {
-        super("Fl�chtling anlegen");
+        super("Fluechtling anlegen");
         //setLocation(500, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
  
         this.setLayout(new BorderLayout(0,5));
  
-        FlüchtlingAnlegen = new JButton("Neuen Fl�chtling Anlegen");
+        FluechtlingAnlegen = new JButton("Neuen Fluechtling Anlegen");
         HelferAnlegen = new JButton("Neuen Helfer Anlegen");
         SachbearbeiterAnlegen = new JButton("Neuen Sachbearbeiter Anlegen");
         UnterkunftAnlegen = new JButton("Neue Unterkunft Anlegen");
-        MeineFlüchtlingeSehen = new JButton("Meine Fl�chtlinge Sehen");
+        MeineFluechtlingeSehen = new JButton("Meine Fluechtlinge Sehen");
         AngeboteAnzeigen = new JButton("Alle Angebote Anzeigen");
         
          
  
         // Listener f�r Buttons
-        FlüchtlingAnlegen.addActionListener(new ActionListener(){
+        FluechtlingAnlegen.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent arg0) {
                 // TODO Auto-generated method stub
-            	new FlüchtlingAnlegen().main();
+            	new FluechtlingAnlegen().main();
                  
             }   
         });
@@ -74,7 +74,7 @@ public class SachbearbeiterMainGUI extends JFrame{
             }
              
         });
-        MeineFlüchtlingeSehen.addActionListener(new ActionListener(){
+        MeineFluechtlingeSehen.addActionListener(new ActionListener(){
  
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -84,7 +84,7 @@ public class SachbearbeiterMainGUI extends JFrame{
                         ScrollableJTable.showFrame();
                     }
                 });*/
-                new MeineFlüchtlingeSehen_ScrollableJTable();
+                new MeineFluechtlingeSehen_ScrollableJTable();
                  
             }
              
@@ -104,21 +104,21 @@ public class SachbearbeiterMainGUI extends JFrame{
         });
          
         // Labels erzeugen
-        überschrift = new JLabel("Neuen Fl�chtling anlegen: ");
+        Ueberschrift = new JLabel("Neuen Fl�chtling anlegen: ");
  
         // Label zentrieren
-        überschrift.setHorizontalAlignment(JLabel.CENTER);
+        Ueberschrift.setHorizontalAlignment(JLabel.CENTER);
  
  
-        getContentPane().add(BorderLayout.PAGE_START, überschrift);
+        getContentPane().add(BorderLayout.PAGE_START, Ueberschrift);
          
          
         buttonGroup = new JPanel(new GridLayout(4,1));
-        buttonGroup.add(FlüchtlingAnlegen);
+        buttonGroup.add(FluechtlingAnlegen);
         buttonGroup.add(HelferAnlegen);
         buttonGroup.add(SachbearbeiterAnlegen);
         buttonGroup.add(UnterkunftAnlegen);
-        buttonGroup.add(MeineFlüchtlingeSehen);
+        buttonGroup.add(MeineFluechtlingeSehen);
         buttonGroup.add(AngeboteAnzeigen);
  
         getContentPane().add(BorderLayout.CENTER, buttonGroup);

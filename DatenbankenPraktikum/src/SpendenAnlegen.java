@@ -5,7 +5,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 
-public class SpenedenAnlegen extends JFrame{
+public class SpendenAnlegen extends JFrame{
 	/*@SId int,
 	@Name nvarchar(30),
 	@Anzahl int,
@@ -36,7 +36,7 @@ public class SpenedenAnlegen extends JFrame{
 	JTextField Name1 = new JTextField(null);
 	JTextField Anzahl1 = new JTextField();
 	
-    public SpenedenAnlegen(){
+    public SpendenAnlegen(){
     	super("Spende Anlegen");
   		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
   		this.setLayout(new GridLayout(7,2));
@@ -71,7 +71,7 @@ public class SpenedenAnlegen extends JFrame{
     }
     
     public void main (String...args){
-    	SpenedenAnlegen sp= new SpenedenAnlegen();
+    	SpendenAnlegen sp= new SpendenAnlegen();
     	sp.setVisible (true);
     	
     }

@@ -189,7 +189,7 @@ public class FluechtlingAnlegen extends JFrame {
               String art2 =Art1.getText();
               String KommtAus2 =kommtAus1.getText();
         
-              StoredProcedure.anlegenFlüchtling(DatabaseConnector.connectToDatabase("DB_PR2015_02_01", "Test123!"), email, vorname2, nachname2, tel2, handy2, geschlecht2, passExistiert2, gebDatum2, registriert2, unterkunft2, einzugsdatum2, wunschland2, orginalNachname2, orginalVorname2, aufenthalt2, gebdatValidiert2, antragstatus2, KommtAus2, sid2, thema2, date2, sprache2, sprachniveau2, schreibniveau2, lesenivau2, bezeichnung2, art2);
+              StoredProcedure.anlegenFluechtling(DatabaseConnector.connectToDatabase("DB_PR2015_02_01", "Test123!"), email, vorname2, nachname2, tel2, handy2, geschlecht2, passExistiert2, gebDatum2, registriert2, unterkunft2, einzugsdatum2, wunschland2, orginalNachname2, orginalVorname2, aufenthalt2, gebdatValidiert2, antragstatus2, KommtAus2, sid2, thema2, date2, sprache2, sprachniveau2, schreibniveau2, lesenivau2, bezeichnung2, art2);
          }   
      });
 	 this.getContentPane().add(save);
